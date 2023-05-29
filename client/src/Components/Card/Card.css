@@ -1,7 +1,7 @@
 .card {
-  width: 550px;
+  width: 500px;
   background-color: #130f40da;
-  height: 700px;
+  height: 600px;
   border-radius: 1rem;
   padding: 2rem;
   margin: 1rem;
@@ -20,3 +20,4 @@
     height: 650px;
   }
 }
+

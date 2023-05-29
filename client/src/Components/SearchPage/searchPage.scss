@@ -1,0 +1,172 @@
+*{
+    box-sizing: border-box;
+  }
+  
+  .parent{
+    display: flex;
+    // width: 50%;
+    justify-content: center;
+    align-items: center;
+   
+  }
+  .search-box{
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+     width: 50%;
+    //  margin-bottom: 2%;
+     background-color: #130f40da;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    font-family: 'Lato' !important;
+  }
+  .input-search{
+    /* height: 50px;
+    width: 50px; */
+    background-color: #130f40da;
+    border-style: none;
+    padding: 10px;
+    color: white;
+    font-size: 18px;
+    letter-spacing: 2px;
+    outline: none;
+    border-radius: 25px;
+    position: relative;
+    transition: all .5s ease-in-out;
+   
+  }
+  .input-search ::placeholderhover{
+    color:rgba(255,255,255,.5);
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 100;
+  }
+  .btn-search{
+    width: 50px;
+    height: 50px;
+    border-style: none;
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    right: 0px;
+    color:#ffffff ;
+    background-color:transparent;
+    pointer-events: painted;  
+  }
+  .btn-search:focus ~ .input-search{
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom:1px solid rgba(255,255,255,.5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  }
+  .input-search:focus{
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom:1px solid rgba(255,255,255,.5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  }
+  
+  
+
+.table_parent{
+  display: flex;
+  justify-content: center;
+}
+  
+  
+
+  @keyframes youtubeAnim{
+    0%,100%{
+      color:#c9110f;
+    }
+    50%{
+      color:#ff0000;
+    }
+  }
+  .table-resp {
+    border-collapse: collapse;
+    margin-left: 1em;
+    width: 40rem;
+    height: 20rem;
+    caption {
+      text-align: left;
+      width: 95vw; // Screws up table width until positioning below
+      // caption-side: top-outside; Firefox-only for now
+    }
+  }
+  
+  @media (min-width: 768px) { // sm, md, lg 
+    .table_parent{
+      display: flex;
+      justify-content: center;
+    }
+    .table-resp {
+      margin-top: 3em;
+      position: relative; 
+     // Used below to give position: absolute context
+      caption {
+        position: absolute; // Fixes table width broken by width: 95vw above
+        top: -2em;
+        margin-bottom: .75em;
+      }
+      thead {
+        text-align: left;
+        background-color: #130f40da;
+        color: white;
+      }
+      tbody {
+        tr {
+          &:nth-child(odd) {
+            background-color: hsl(0, 0%, 94%);
+          }
+          &:nth-child(even) {
+             background-color: hsl(0, 0%, 88%);
+          }
+        }
+      }
+      td, th {
+        padding: .25em .5em;
+        &:nth-child(2) {
+          border-left: 3px solid #fff;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 767px) /* xs */ {
+    thead {
+      display: none;
+    }
+    .table-resp {
+      display: block;
+      margin-top: 1em;
+      width: 20rem;
+      height: 10rem;
+    }
+    td {
+      display: block;
+    }
+    td:first-child {
+      font-weight: 700;
+      margin-top: .75em;
+      margin-bottom: 0;
+    }
+    td:nth-child(2) {
+      margin-top: 0;
+    }
+  }
+  
+  /* Uninteresting stuff below here */
+  
+  html {
+    font: 18px "Iowan Old Style", serif;
+  }

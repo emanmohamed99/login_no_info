@@ -36,14 +36,16 @@
   font-size: 1rem;
   font-family: inherit;
   cursor: pointer;
-  background-color: #4e65f7;
-  color: white;
+  /* background-color: #4e65f7; */
+  background-color: lightgray;
+  color: black;
   border: 2px solid transparent;
 }
 
 .login_button:hover {
-  border: 2px solid #4e65f7;
+  border: 2px solid lightgray;
   background-color: #000;
+  color: white;
 }
 
 .link_container {
@@ -128,12 +130,11 @@ code {
 .login_parent{
   display: flex;
   justify-content: center;
-
+  background-image: ("./images/bg.jpg");
+  
   height: 100vh;
 }
-.parent_parent_login{
-  background-color: lightgray;
-}
+
 .buttonColor{
   margin: 2px;
 background-color: #4e65f7;
