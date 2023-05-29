@@ -1,45 +1,58 @@
-table {
+.parent_tableAll{
+  display: flex;
+  justify-content: center;
+  height: 80vh;
+
+}
+.buttonColor{
+  background-color: #130f40da;
+  color: white;
+}
+h2{
+  text-align: center;
+}
+.tableAll {
   border: 1px solid #ccc;
   border-collapse: collapse;
   margin: 0;
   padding: 0;
-  width: 100%;
+  width: 80%;
   table-layout: fixed;
 }
 
-table caption {
+.tableAll caption {
   font-size: 1.5em;
   margin: .5em 0 .75em;
 }
 
-table tr {
-  background-color: #f8f8f8;
+.tableAll tr {
+  background-color: lightgray;
   border: 1px solid #ddd;
   padding: .35em;
 }
 
-table th,
-table td {
+.tableAll th,
+.tableAll td {
   padding: .625em;
   text-align: center;
 }
 
-table th {
+.tableAll th {
   font-size: .85em;
   letter-spacing: .1em;
   text-transform: uppercase;
 }
 
 @media screen and (max-width: 600px) {
-  table {
+  .tableAll {
     border: 0;
   }
 
-  table caption {
+  .tableAll caption {
     font-size: 1.3em;
   }
   
-  table thead {
+  .tableAll thead {
     border: none;
     clip: rect(0 0 0 0);
     height: 1px;
@@ -50,20 +63,20 @@ table th {
     width: 1px;
   }
   
-  table tr {
+  .tableAll tr {
     border-bottom: 3px solid #ddd;
     display: block;
     margin-bottom: .625em;
   }
   
-  table td {
+  .tableAll td {
     border-bottom: 1px solid #ddd;
     display: block;
     font-size: .8em;
     text-align: right;
   }
   
-  table td::before {
+  .tableAll td::before {
     /*
     * aria-label has no advantage, it won't be read inside a table
     content: attr(aria-label);
@@ -74,7 +87,7 @@ table th {
     text-transform: uppercase;
   }
   
-  table td:last-child {
+  .tableAll td:last-child {
     border-bottom: 0;
   }
 }
@@ -84,4 +97,7 @@ body {
   font-family: "Open Sans", sans-serif;
   line-height: 1.25;
   font-size: small;
+  background-color: rgb(138, 138, 195);
+  
+
 }

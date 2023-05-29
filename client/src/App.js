@@ -6,8 +6,9 @@ import {
   Routes,
 } from "react-router-dom";
 import {AuthProvider, RequireAuth} from "react-auth-kit"
-import Searchpage from "./Components/searchpage";
+import Searchpage from "./Components/SearchPage/searchpage";
 import "./i18n"
+import SearchAll from "./Components/SearchPage/searchAll";
 function App() {
   return (
     <>
@@ -21,6 +22,8 @@ function App() {
       <Routes>
       <Route path="/login" element={ <LoginForm></LoginForm>  }></Route>
         <Route path="/" element={ <RequireAuth loginPath="/login"><Searchpage></Searchpage> </RequireAuth>  }></Route>
+        <Route path="/history" element={ <RequireAuth loginPath="/login"><SearchAll></SearchAll>   </RequireAuth>  }></Route>
+        {/* <Route path="/history" element={ <SearchAll></SearchAll>  }></Route> */}
         </Routes>
     </BrowserRouter>
     </AuthProvider>

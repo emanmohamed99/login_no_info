@@ -2,14 +2,14 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 
 import  { useCallback, useRef } from 'react';
-
-import SearchResult from './searchResult';
-import SearchAll from './LoginForm/searchAll';
+import SearchAll from './searchAll';
 import { FaSearch } from 'react-icons/fa';
-import "./searchPage.css"
+import "./searchPage.scss"
 import { useTranslation } from 'react-i18next';
+import SearchResult from './searchResult';
 export default function Searchpage() {
         let inputRef=useRef(null);
+        let [visible,setvisible]=useState(false)
         let [t,i18n]=useTranslation()
         const [userData,setUserData] = useState({phone:""});
         const [data,setData] = useState([]);
@@ -22,17 +22,13 @@ export default function Searchpage() {
             e.preventDefault();
           var phone=userData.phone;
                 axios
-                  .get(`http://apilayer.net/api/validate?access_key=3a12d124bf1864eef8786bc7c8e51a02&number=${phone}&country_code=&format=1"`)
+                .get(`http://localhost:7400/api/search/${phone}`)
                   .then((res) => {
+                    console.log(res.data)
                 setData(res.data)
+                setvisible(true)
               })
-          
-          
-              console.log(data)
             }
-            useEffect(() => {
-               inputRef.current.focus();
-            }, []);
     
       return (
         
@@ -47,12 +43,59 @@ export default function Searchpage() {
   </div>
  </div>
  </form>
-    <SearchAll data>{data}</SearchAll>
-    <SearchResult data={data}></SearchResult>
+  {visible&&<div className='table_parent'>
+  <table class="table-resp">
+  <thead>
+    <tr>
+      <th>data</th>
+      <th>values</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+      <td>valid</td>
+      <td>{ data.valid}</td>
+    </tr>
+  <tr>
+      <td>number</td>
+      <td>{ data.number}</td>
+    </tr>
+    <tr>
+      <td>local format</td>
+      <td>{ data.local_format}</td>
+    </tr>
+    <tr>
+      <td>international format</td>
+      <td>{ data.international_format}</td>
+    </tr>
+    <tr>
+      <td>country prefix</td>
+      <td>{ data.country_prefix}</td>
+    </tr>
+    <tr>
+      <td>country code</td>
+      <td>{ data.country_name}</td>
+    </tr>
+    <tr>
+      <td>location</td>
+      <td>{ data.location}</td>
+    </tr>
+    <tr>
+      <td>carrier</td>
+      <td>{ data.carrier}</td>
+    </tr>
+    <tr>
+      <td>line type</td>
+      <td>{ data.line_type}</td>
+    </tr>
+  </tbody>
+</table>
+  </div>}
+  <SearchResult data={data}></SearchResult>
         </div>
+      
       )
     
     
 }
 
-//`http://apilayer.net/api/validate?access_key=9b4de5ad5b290cb93638a1f67713501a&number=${01005468048}&country_code=${EG}&format=1`

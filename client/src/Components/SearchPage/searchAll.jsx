@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import "./searchAll.css"
 
-export default function SearchAll({data}) {
+export default function SearchAll() {
     const [mydata, setData] = useState([]);
     useEffect(() => {
         axios
@@ -12,17 +12,16 @@ export default function SearchAll({data}) {
     })
         
      }, []);
-        //      const [filteredData,setFiltered]=useState(mydata);
-    
-        // let Arr= mydata.filter((std)=>std.includes(data));
-        // setFiltered(Arr);
-       
    
   return (
+    <>
+    <h2>History Page</h2>
+    <div className='parent_tableAll'>
     
-    <div><table >
+    <table  className='tableAll'>
     <thead>
       <tr>
+      <td>valid</td>
         <th>number</th>
         <th>local format</th>
         <th>international format</th>
@@ -35,8 +34,9 @@ export default function SearchAll({data}) {
       </tr>
     </thead>
    {mydata.map((mydata) => (
-    <tbody key={mydata.number}>
+    <tbody key={mydata.valid}>
 <tr >
+<td>{mydata.valid}</td>
  <td>{mydata.number}</td>
     <td> { mydata.local_format}</td>
     <td>  { mydata.international_format}</td>
@@ -50,5 +50,6 @@ export default function SearchAll({data}) {
 </tbody>
 ))}
   </table></div>
+  </>
   )
 }

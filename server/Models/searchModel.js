@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 
 
 var usersSchema = {
+    "phone":String,
     "valid": Boolean,
     "number": String,
     "local_format": String,
