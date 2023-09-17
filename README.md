@@ -6,7 +6,7 @@
 6_display all phone numbers info of that searched (history) in search page
 7_loglization both loginpage and searchpage
 8_create higher order component to make only login user t navigate to searcg page
-9_server side(backent using nodejs)
+9_server side(backend using nodejs)
 10_create web server to be sure validation of password and to mongodb and hashed password using (MVC)
 11_create web server to search for phone and save result to mngodb
 12_create web server to retreve all data
